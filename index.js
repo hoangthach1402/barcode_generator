@@ -3,10 +3,11 @@ const bwipjs = require('bwip-js');
 const qrcode = require('qrcode');
 
 const app = express();
-const port = 3000;
+const port = process.env.PORT || 3000
 app.get('/',(req,res)=>{
   res.send('welcome api barcode generator')
 })
+// process.env.PORT
 // Định nghĩa API endpoint
 app.get('/barcode', (req, res) => {
   const url = req.query.url; // Lấy URL từ tham số truy vấn
