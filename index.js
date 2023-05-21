@@ -4,7 +4,9 @@ const qrcode = require('qrcode');
 
 const app = express();
 const port = 3000;
-
+app.get('/',(req,res)=>{
+  res.send('welcome api barcode generator')
+})
 // Định nghĩa API endpoint
 app.get('/barcode', (req, res) => {
   const url = req.query.url; // Lấy URL từ tham số truy vấn
